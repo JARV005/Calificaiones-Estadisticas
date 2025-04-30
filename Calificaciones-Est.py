@@ -66,7 +66,7 @@ CantidadD=len(ListaC)
 prom=suma/CantidadD
 print(f"Promedio calificaciones en lista: {prom}")
 
-contador=0
+
 
 #Ingresar un valor y determinar que calificaciones son mayores al valor ingresado 
 
@@ -77,3 +77,15 @@ for C in calificaciones.split(','):
     if C>CalifMay:
         Mayores.append(C)
 print(f"Las calificaciones mayores a {CalifMay} son: {Mayores}") 
+
+
+#Encontrar calificacion en especifico
+contador=0
+BuscarC=float(input("Ingrese una calificacion a buscar (entre 0 y 100) "))
+for C in calificaciones.split(','):
+    C=float(C)
+    if BuscarC==C:
+        contador+=1
+        
+print(f"La calificacion {BuscarC} esta {contador} veces en la lista ")
+
