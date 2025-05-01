@@ -26,7 +26,7 @@ while True:
     print("5. Salir")
 
     opcion = input("Seleccione una opción (1-5): ")
-
+#Entrada a agregar notas en lista
     if opcion == '1':
         calificaciones = input("Ingresa las calificaciones separadas por comas (0-100): ")
         for C in calificaciones.split(','):
@@ -39,7 +39,7 @@ while True:
             except ValueError:
                 print(f"{C} no es un número válido.")
         print(f"Lista actualizada: {ListaC}")
-
+#Entrada a Promedio de calificaciones
     elif opcion == '2':
         if len(ListaC) == 0:
             print("La lista está vacía.")
@@ -70,7 +70,7 @@ while True:
                     break
                 else:
                     print("Respuesta no válida. Escribe 'si' para sí o 'no' para no.")
-
+#Entrada a comparar nota
     elif opcion == '3':
         if len(ListaC) == 0:
             print("La lista está vacía.")
@@ -89,7 +89,7 @@ while True:
                     print(f"Las calificaciones mayores a {valor} son: {mayores} (Total: {cont})")
             except ValueError:
                 print("Ingrese un número válido.")
-
+#Entrada a contar cantidad de veces que esta una aplicacion
     elif opcion == '4':
         if len(ListaC) == 0:
             print("La lista está vacía.")
@@ -106,7 +106,7 @@ while True:
                     print(f"La calificación {buscar} está {contador} veces en la lista.")
             except ValueError:
                 print("Ingrese un número válido.")
-
+#Salir del programa
     elif opcion == '5':
         print("Saliendo del programa")
         break
