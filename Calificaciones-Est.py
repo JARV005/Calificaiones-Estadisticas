@@ -12,11 +12,12 @@ while True:
             break
     except ValueError:
         print("Ingrese un valor numérico.")
-
+#Inicialización de la lista de calificaciones
 # Lista de calificaciones
 ListaC = []
 
 # Menú principal
+# Permite al usuario elegir acciones sobre la lista de calificaciones
 while True:
     print("\n   Menú    ")
     print("1. Agregar lista de notas")
@@ -35,22 +36,13 @@ while True:
                 if calificacion >= 0 and calificacion <= 100:
                     ListaC.append(calificacion)
                 else:
-                    print(f"La calificación {calificacion} no es válida. Debe estar entre 0 y 100.")
+                    print(f"La calificación {calificacion} no es válida. Debe estar entre 0 y 100.")# Valida que estén entre 0 y 100 antes de agregarlas a la lista
             except ValueError:
                 print(f"{C} no es un número válido.")
         print(f"Lista actualizada: {ListaC}")
-#Entrada a Promedio de calificaciones
-    elif opcion == '2':
-        if len(ListaC) == 0:
-            print("La lista está vacía.")
-        else:
-            suma = sum(ListaC)
-            cantidad = len(ListaC)
-            promedio = suma / cantidad
-            print(f"Promedio calificaciones en lista: {promedio:.2f}")
-            # Bucle para agregar más calificaciones si el usuario desea
-            while True:
-                continuar = input("¿Deseas ingresar más calificaciones? (si/no): ").lower()
+        # Bucle para agregar más calificaciones si el usuario desea
+        while True:
+                continuar = input("¿Deseas ingresar más calificaciones? (si/no): ").lower()# También permite al usuario agregar más calificaciones si desea
                 if continuar == 'si':
                     nuevasC = input("Ingresa las nuevas calificaciones separadas por comas (0-100): ")
                     nuevas = []
@@ -67,9 +59,20 @@ while True:
                     # Añadir solo las calificaciones válidas
                     ListaC.extend(nuevas)
                 elif continuar == 'no':
+                    print("Lista actualizada: ",ListaC)
                     break
                 else:
                     print("Respuesta no válida. Escribe 'si' para sí o 'no' para no.")
+#Entrada a Promedio de calificaciones
+    elif opcion == '2':
+        if len(ListaC) == 0:
+            print("La lista está vacía.")
+        else:
+            suma = sum(ListaC)
+            cantidad = len(ListaC)
+            promedio = suma / cantidad
+            print(f"Promedio calificaciones en lista: {promedio:.2f}")
+            
 #Entrada a comparar nota
     elif opcion == '3':
         if len(ListaC) == 0:
